@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+
+    <title>Rollover Reveal Example</title>
+
+    <link href="../_assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="../_assets/prism.css" type="text/css" rel="stylesheet" />
+
+    <script src="../_assets/jquery-2.1.4.min.js"></script>
+    <script src="../_assets/prism.js"></script>
+
+    <script src="../_assets/jquery.easing.js"></script>
+    <script src="../../src/jquery.rolloverReveal.js"></script>
+
+    <style>
+
+        .box
+        {
+            position:relative;
+            width:200px;
+            height:320px;
+            border:2px solid #333333;
+            overflow:hidden;
+            display:inline-block;
+            margin-left:20px;
+            background-image: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+        }
+
+        .box h3
+        {
+            line-height:320px;
+            text-align: center;
+        }
+
+        .overlay
+        {
+            position:absolute;
+            top:0px;
+            left:0px;
+        }
+
+        pre
+        {
+            margin-top:20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Rollover Reveal example</h1>
+        </div>
+
+        <div class="box slideup">
+            <img class="overlay" src="wood.jpg" alt="" />
+            <h3>Slide Up</h3>
+        </div>
+
+        <div class="box slideright">
+            <img class="overlay" src="wood.jpg" alt="" />
+            <h3>Slide Right</h3>
+        </div>
+
+        <div class="box slidedown">
+            <img class="overlay" src="wood.jpg" alt="" />
+            <h3>Slide Down</h3>
+        </div>
+
+        <div class="box slideleft">
+            <img class="overlay" src="wood.jpg" alt="" />
+            <h3>Slide Left</h3>
+        </div>
+
+<pre><code class="language-javascript">//default
+$(".box.slideup").rolloverReveal({
+    direction : "up",
+    reverse : false,
+    overlaySelector: ".overlay",
+    openDuration: 300,
+    closeDuration: 300,
+    openEasing: 'swing',
+    closeEasing: 'swing'
+});
+
+$(".box.slideright").rolloverReveal({
+    direction : "right",
+    closeEasing: "easeOutBounce",
+    closeDuration : 800
+});
+$(".box.slidedown").rolloverReveal({
+    direction : "down"
+});
+$(".box.slideleft").rolloverReveal({
+    direction : "left",
+    reverse: true
+});
+</code></pre>
+
+    </div>
+
+    <script>
+
+        $(document).ready(function()
+        {
+            //default
+            $(".box.slideup").rolloverReveal({
+                direction : "up",
+                reverse : false,
+                overlaySelector: ".overlay",
+                openDuration: 300,
+                closeDuration: 300,
+                openEasing: 'swing',
+                closeEasing: 'swing'
+            });
+
+            $(".box.slideright").rolloverReveal({
+                direction : "right",
+                closeEasing: "easeOutBounce",
+                closeDuration : 800
+            });
+            $(".box.slidedown").rolloverReveal({
+                direction : "down"
+            });
+            $(".box.slideleft").rolloverReveal({
+                direction : "left",
+                reverse: true
+            });
+
+        });
+
+    </script>
+
+
+
+
+</body>
+</html>

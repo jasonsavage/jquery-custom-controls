@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+
+    <title>Vertical Menu example</title>
+
+    <link href="../_assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="../_assets/prism.css" type="text/css" rel="stylesheet" />
+
+    <script src="../_assets/jquery-2.1.4.min.js"></script>
+    <script src="../_assets/prism.js"></script>
+
+    <script src="../../src/jquery.verticalMenu.js"></script>
+
+    <style>
+
+        .vertical-menu
+        {
+            position:relative;
+            width:300px;
+            height:500px;
+        }
+        .vertical-menu > .btn.top,
+        .vertical-menu > .btn.bottom
+        {
+            position:absolute;
+            top:0px;
+            width:100%;
+            height:50px;
+            padding:0px;
+            border-radius: 0px;
+            border-width:0px;
+            background-image: url("scroll-arrow-up.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .vertical-menu > .btn.bottom
+        {
+            top:inherit;
+            bottom:0px;
+            background-image: url("scroll-arrow-down.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .vertical-menu > .pane
+        {
+            position:absolute;
+            width:100%;
+            top:55px;
+            bottom:55px;
+            overflow:hidden;
+        }
+
+        .vertical-menu > .pane ul
+        {
+            margin:0px;
+            padding:0px;
+            width:100%;
+            list-style: none outside none;
+            position:absolute;
+            top:0px;
+        }
+        .vertical-menu > .pane ul li
+        {
+            padding:20px 10px;
+            margin-bottom:5px;
+            background-color: #F5F5F5;
+        }
+        strong
+        {
+            display:block;
+        }
+        pre
+        {
+            margin-top:20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <div class="page-header">
+            <h1>Vertical Menu example</h1>
+        </div>
+
+        <div class="vertical-menu">
+            <a class="btn btn-info top" href="javascript:void(0)">&nbsp;</a>
+
+            <div class="pane">
+                <ul>
+                    <li>
+                        <strong>Tractor Supply Company</strong>
+                        1500 MAIN STREET
+                        <br>
+                        FOLLANSBEE, WV 26037
+                    </li>
+                    <li>
+                        <strong>Tractor Supply Company</strong>
+                        1500 MAIN STREET
+                        <br>
+                        FOLLANSBEE, WV 26037
+                    </li>
+                    <li>
+                        <strong>Tractor Supply Company</strong>
+                        1500 MAIN STREET
+                        <br>
+                        FOLLANSBEE, WV 26037
+                    </li>
+                    <li>
+                        <strong>Tractor Supply Company</strong>
+                        1500 MAIN STREET
+                        <br>
+                        FOLLANSBEE, WV 26037
+                    </li>
+                    <li>
+                        <strong>Tractor Supply Company</strong>
+                        1500 MAIN STREET
+                        <br>
+                        FOLLANSBEE, WV 26037
+                    </li>
+                    <li>
+                        <strong>Tractor Supply Company</strong>
+                        1500 MAIN STREET
+                        <br>
+                        FOLLANSBEE, WV 26037
+                    </li>
+                    <li>
+                        <strong>Tractor Supply Company</strong>
+                        1500 MAIN STREET
+                        <br>
+                        FOLLANSBEE, WV 26037
+                    </li>
+                    <li>
+                        <strong>Tractor Supply Company</strong>
+                        1500 MAIN STREET
+                        <br>
+                        FOLLANSBEE, WV 26037
+                    </li>
+                </ul>
+            </div>
+
+            <a class="btn btn-info bottom" href="javascript:void(0)">&nbsp;</a>
+        </div>
+
+<pre><code class="language-javascript">$(".vertical-menu").verticalMenu({
+    scrollSpeed         : 5,
+    arrowUpSize         : 55,
+    arrowDownSize       : 55,
+    arrowUpSelector     : "a.top",
+    arrowDownSelector   : "a.bottom",
+    paneSelector        : ".pane",
+    menuSelector        : "ul"
+});
+
+//requestAnimationFrame shim
+window.requestAnimFrame = (function(){
+return  window.requestAnimationFrame       ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame    ||
+        window.oRequestAnimationFrame      ||
+        window.msRequestAnimationFrame     ||
+        function( callback ){
+          window.setTimeout(callback, 1000 / 60);
+        };
+})();
+</code></pre>
+
+    </div>
+
+
+    <script>
+
+        $(document).ready(function()
+        {
+            $(".vertical-menu").verticalMenu();
+
+        });
+
+        window.requestAnimFrame = (function(){
+        return  window.requestAnimationFrame       ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame    ||
+                window.oRequestAnimationFrame      ||
+                window.msRequestAnimationFrame     ||
+                function( callback ){
+                  window.setTimeout(callback, 1000 / 60);
+                };
+        })();
+
+    </script>
+
+
+
+
+</body>
+</html>

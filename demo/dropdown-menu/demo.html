@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+
+    <title>Dropdown Menu example</title>
+
+    <link href="../_assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="../_assets/prism.css" type="text/css" rel="stylesheet" />
+
+    <script src="../_assets/jquery-2.1.4.min.js"></script>
+    <script src="../_assets/prism.js"></script>
+
+    <script src="../../src/jquery.dropdownMenu.js"></script>
+
+    <style>
+
+        .container
+        {
+            position:relative;
+        }
+
+        header
+        {
+            width:100%;
+            min-height:70px;
+            border:1px solid #B3B3B3;
+            margin-bottom: 20px;
+
+            background: -moz-linear-gradient(top, #fbfbfb 0%, #e4e4e4 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fbfbfb), color-stop(100%, #e4e4e4));
+            background: -webkit-linear-gradient(top, #fbfbfb 0%, #e4e4e4 100%);
+            background: -o-linear-gradient(top, #fbfbfb 0%, #e4e4e4 100%);
+            background: -ms-linear-gradient(top, #fbfbfb 0%, #e4e4e4 100%);
+            background: linear-gradient(to bottom, #fbfbfb 0%, #e4e4e4 100%);
+        }
+        .dd-button
+        {
+            height:70px;
+            line-height:70px;
+            border:0px;
+            border-width: 0;
+            border-radius:0px;
+            padding:0px 30px;
+            border-right:1px solid #B3B3B3;
+            cursor: pointer;
+
+        }
+        .icon-dd-arrow
+        {
+            display: inline-block;
+            width:10px;
+            height:10px;
+            margin-left:10px;
+            margin-top:3px;
+            background:url("dd-arrow.gif") no-repeat center center;
+        }
+        .dd-menu
+        {
+            padding:0px 40px;
+            overflow:hidden;
+            width:860px;
+
+            background: -moz-linear-gradient(top, #e4e4e4 0%, #fbfbfb 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e4e4e4), color-stop(100%, #fbfbfb));
+            background: -webkit-linear-gradient(top, #e4e4e4 0%, #fbfbfb 100%);
+            background: -o-linear-gradient(top, #e4e4e4 0%, #fbfbfb 100%);
+            background: -ms-linear-gradient(top, #e4e4e4 0%, #fbfbfb 100%);
+            background: linear-gradient(to bottom, #e4e4e4 0%, #fbfbfb 100%);
+        }
+
+        .dd-menu > img
+        {
+            margin:20px 0px;
+        }
+
+        pre
+        {
+            margin-top:20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h1>Dropdown Menu example</h1>
+        </div>
+
+        <header>
+
+            <a class="dd-button" data-menu="#products-menu">Products</a>
+
+            <div id="products-menu" class="dd-menu">
+
+                <img src="dd-pane_item-1.png" alt="" />
+
+            </div>
+        </header>
+
+        <a class="btn btn-info dd-remove">Remove Dropdown</a>
+
+
+<pre><code class="language-javascript">
+$(".dd-button").addDropdownMenu();
+
+$(".dd-remove").click(function()
+{
+    $(".dd-button").removeDropdownMenu();
+});
+</code></pre>
+
+    </div>
+
+
+    <script>
+
+        $(document).ready(function()
+        {
+            $(".dd-button").addDropdownMenu();
+
+
+            $(".dd-remove").click(function()
+            {
+                $(".dd-button").removeDropdownMenu();
+            });
+
+        });
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+
+    <title>Collapsible example</title>
+
+    <link href="../_assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="../_assets/prism.css" type="text/css" rel="stylesheet" />
+
+    <script src="../_assets/jquery-2.1.4.min.js"></script>
+    <script src="../_assets/prism.js"></script>
+
+    <script src="../../src/jquery.selected.js"></script>
+    <script src="../../src/jquery.collapsible.js"></script>
+
+    <style>
+
+        .question
+        {
+            background-color: #F5F5F5;
+            margin-bottom:10px;
+            padding:10px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .question.selected
+        {
+            background-color: #006DCC;
+            margin-bottom:10px;
+            color:#ffffff;
+        }
+
+        .question h3
+        {
+           border-bottom:1px dotted #333333;
+           margin-top:0px;
+        }
+        .question.selected h3
+        {
+            border-bottom:1px dotted #ffffff;
+        }
+
+        .question .content
+        {
+            padding:0px 20px 0px 45px;
+            margin:0px;
+            overflow:hidden;
+        }
+
+        pre
+        {
+            margin-top:20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Collapsible Example</h1>
+        </div>
+
+
+        <div class="question">
+            <h3>Can I feed this to my puppy or is Source just for adult dogs?</h3>
+            <div class="content">
+                <p>Source is approved by AAFCO for all life stages – so the answer is yes.  Start puppies on Source as soon as they begin to chew on solid food, usually 3-4 weeks of age.  Allow them to eat as much as they want until they are fully weaned (6-8 weeks of age).  After weaning, feed to the feeding instructions on the bag.  If desired, Source can be fed moistened by mixing 1/4 cup of water to 2 cups of Source.  In appropriate volumes, Source is great for puppies, adult dogs, lactating females and even seniors.  Make sure to talk to your veterinarian about your dog's ideal weight and adjust your amounts accordingly.</p>
+            </div>
+        </div>
+
+
+<pre><code class="language-javascript">@requires jquery.selected.js
+
+$(".question").collapsible({
+    contentSelector : ".content",
+    openDuration : 300,
+    openEasing : "swing",
+    closeDuration : 300,
+    closeEasing : "swing"
+});
+</code></pre>
+
+    </div>
+
+
+
+    <script>
+
+        $(document).ready(function()
+        {
+            $(".question").collapsible({
+                contentSelector : ".content",
+                openDuration : 300,
+                openEasing : "swing",
+                closeDuration : 300,
+                closeEasing : "swing"
+            });
+
+        });
+
+
+    </script>
+
+</body>
+</html>

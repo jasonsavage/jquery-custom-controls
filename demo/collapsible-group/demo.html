@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+
+    <title>Collapsible Group example</title>
+
+    <link href="../_assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="../_assets/prism.css" type="text/css" rel="stylesheet" />
+
+    <script src="../_assets/jquery-2.1.4.min.js"></script>
+    <script src="../_assets/prism.js"></script>
+
+    <script src="../../src/jquery.selected.js"></script>
+    <script src="../../src/jquery.collapsible.js"></script>
+    <script src="../../src/jquery.collapsibleGroup.js"></script>
+
+    <style>
+
+
+        .faqs
+        {
+            margin:0px;
+            list-style: none outside none;
+        }
+
+        .faqs > li
+        {
+            background-color: #F5F5F5;
+            padding:10px;
+            border-left:1px solid #DDDDDD;
+            border-right:1px solid #DDDDDD;
+            border-bottom:1px solid #DDDDDD;
+            cursor: pointer;
+        }
+        .faqs > li:first-child
+        {
+            border-top:1px solid #DDDDDD;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+        .faqs > li:last-child
+        {
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .faqs > li.selected
+        {
+            background-color: #006DCC;
+            color:#ffffff;
+        }
+        .faqs > li .icon
+        {
+            width:20px;
+            padding-top:10px;
+            float:left;
+        }
+        .faqs > li .icon-plus-sign { display:block; }
+        .faqs > li .icon-minus-sign { display:none; }
+        .faqs > li.selected .icon-plus-sign { display:none; }
+        .faqs > li.selected .icon-minus-sign { display:block; }
+
+        .faqs > li .btn
+        {
+            padding:4px 8px;
+            font-size:12px;
+            float:left;
+            margin:3px 10px 0px 0px;
+        }
+        .faqs > li h3
+        {
+           margin:0px;
+        }
+
+        .faqs .answer
+        {
+            padding:0px 20px 0px 45px;
+            margin:0px;
+            overflow:hidden;
+        }
+
+
+        pre
+        {
+            margin-top:20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h1>Collapsible Group Example</h1>
+        </div>
+
+
+        <ul class="faqs">
+
+            <li>
+                <div class="icon"><i class="icon-plus-sign"></i><i class="icon-minus-sign icon-white"></i></div>
+                <h3>Can I feed this to my puppy or is Source just for adult dogs?</h3>
+                <div class="answer">
+                    <p>Source is approved by AAFCO for all life stages – so the answer is yes.  Start puppies on Source as soon as they begin to chew on solid food, usually 3-4 weeks of age.  Allow them to eat as much as they want until they are fully weaned (6-8 weeks of age).  After weaning, feed to the feeding instructions on the bag.  If desired, Source can be fed moistened by mixing 1/4 cup of water to 2 cups of Source.  In appropriate volumes, Source is great for puppies, adult dogs, lactating females and even seniors.  Make sure to talk to your veterinarian about your dog's ideal weight and adjust your amounts accordingly.</p>
+                </div>
+            </li>
+
+            <li>
+                <div class="icon"><i class="icon-plus-sign"></i><i class="icon-minus-sign icon-white"></i></div>
+                <h3>If my dog is overweight, can I feed him Source?</h3>
+                <div class="answer">
+                    <p>Yes. If you look at the feeding guideline, you'll notice there is a recommended amount to feed a less active animal or one that needs weight control.  Of course, you should check your dog's weight regularly and adjust feeding levels to maintain healthy weight. You should also see your vet regularly.</p>
+                </div>
+            </li>
+
+            <li>
+                <div class="icon"><i class="icon-plus-sign"></i><i class="icon-minus-sign icon-white"></i></div>
+                <h3>How should I transition my pet to Source?</h3>
+                <div class="answer">
+                    <p>Slowly mix this new food with your pet’s current food over a 5-10 day period until they are solely eating Source.</p>
+                </div>
+            </li>
+            <li>
+                <div class="icon"><i class="icon-plus-sign"></i><i class="icon-minus-sign icon-white"></i></div>
+                <h3>Can I feed this to my puppy or is Source just for adult dogs?</h3>
+                <div class="answer">
+                    <p>Source is approved by AAFCO for all life stages – so the answer is yes.  Start puppies on Source as soon as they begin to chew on solid food, usually 3-4 weeks of age.  Allow them to eat as much as they want until they are fully weaned (6-8 weeks of age).  After weaning, feed to the feeding instructions on the bag.  If desired, Source can be fed moistened by mixing 1/4 cup of water to 2 cups of Source.  In appropriate volumes, Source is great for puppies, adult dogs, lactating females and even seniors.  Make sure to talk to your veterinarian about your dog's ideal weight and adjust your amounts accordingly.</p>
+                </div>
+            </li>
+
+            <li>
+                <div class="icon"><i class="icon-plus-sign"></i><i class="icon-minus-sign icon-white"></i></div>
+                <h3>If my dog is overweight, can I feed him Source?</h3>
+                <div class="answer">
+                    <p>Yes. If you look at the feeding guideline, you'll notice there is a recommended amount to feed a less active animal or one that needs weight control.  Of course, you should check your dog's weight regularly and adjust feeding levels to maintain healthy weight. You should also see your vet regularly.</p>
+                </div>
+            </li>
+
+            <li>
+                <div class="icon"><i class="icon-plus-sign"></i><i class="icon-minus-sign icon-white"></i></div>
+                <h3>How should I transition my pet to Source?</h3>
+                <div class="answer">
+                    <p>Slowly mix this new food with your pet’s current food over a 5-10 day period until they are solely eating Source.</p>
+                </div>
+            </li>
+
+        </ul>
+
+
+<pre><code class="language-javascript">@requires jquery.selected.js
+@requires jquery.collapsible.js
+
+$(".faqs").collapsibleGroup({
+    contentSelector : ".answer",
+    openDuration : 300,
+    openEasing : "swing",
+    closeDuration : 300,
+    closeEasing : "swing",
+    allowMultiple : true
+});
+</code></pre>
+
+    </div>
+
+    <script>
+
+        $(document).ready(function()
+        {
+            $(".faqs").collapsibleGroup({
+                contentSelector : ".answer",
+                openDuration : 300,
+                openEasing : "swing",
+                closeDuration : 300,
+                closeEasing : "swing",
+                allowMultiple : true
+            });
+
+
+        });
+
+
+    </script>
+
+</body>
+</html>
